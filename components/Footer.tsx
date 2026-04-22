@@ -111,12 +111,24 @@ export function Footer() {
       </Container>
 
       <div className="border-t border-zinc-200">
-        <Container className="py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-muted">
+        <Container className="py-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted">
           <p>© {currentYear} {SITE.name}. All rights reserved.</p>
-          <div className="flex gap-4">
+          <div className="flex flex-wrap items-center justify-center gap-4">
             <Link href="/privacy" className="hover:text-burgundy-600">Privacy</Link>
             <Link href="/terms" className="hover:text-burgundy-600">Terms</Link>
             <Link href="/accessibility" className="hover:text-burgundy-600">Accessibility</Link>
+            <span aria-hidden="true" className="text-zinc-300">·</span>
+            <span>
+              Designed by{" "}
+              <a
+                href="https://makologics.com"
+                target="_blank"
+                rel="noopener"
+                className="font-semibold text-ink hover:text-burgundy-600"
+              >
+                Mako Logics
+              </a>
+            </span>
           </div>
         </Container>
       </div>
