@@ -379,42 +379,8 @@ export const PRODUCTS: Product[] = [
     useCases: [],
   },
 
-  {
-    slug: "color-charts",
-    category: "awnings-canopies",
-    imageFolder: "brand-partners",
-    title: "Fabric & Metal Color Charts",
-    breadcrumb: "Awnings & Canopies · Color Charts",
-    shortBlurb:
-      "Browse fabric and metal color options from Sunbrella and our partners.",
-    intro: [
-      "We work from a huge palette. Sunbrella alone has hundreds of solids and stripe patterns, plus custom-printed options. On the metal side, we offer standard and custom Kynar 500 / powder-coat color matches.",
-      "The best way to pick is in person — we'll bring physical swatches to your site visit so you can hold them against your building or fabric. Below are links to the current color catalogs from our partners.",
-    ],
-    features: [
-      {
-        title: "Sunbrella solids",
-        body: "Dozens of solid colors, fade-tested to 10 years. Popular choices: Cadet Grey, Forest Green, Burgundy, Toast, Natural.",
-      },
-      {
-        title: "Sunbrella stripes",
-        body: "Classic awning stripes — often the right look for historic storefronts and traditional residential.",
-      },
-      {
-        title: "Custom prints",
-        body: "Dye-sublimated custom patterns, logos, and artwork for hospitality and branded applications.",
-      },
-      {
-        title: "Metal — Kynar 500",
-        body: "The industry-standard paint system for long-life metal awnings. 20–30 year color warranties.",
-      },
-      {
-        title: "Metal — powder coat",
-        body: "Broader color range at a lower cost point, excellent for shorter-life or matched color needs.",
-      },
-    ],
-    useCases: [],
-  },
+  // Color Charts is a static page at app/awnings-canopies/color-charts/page.tsx
+  // — not in PRODUCTS so it doesn't collide with the dynamic [slug] route.
 
   // Shade & Curtains
   {
