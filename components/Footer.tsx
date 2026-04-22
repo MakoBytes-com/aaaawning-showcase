@@ -25,7 +25,7 @@ export function Footer() {
     <footer className="mt-auto bg-zinc-100 text-ink">
       <Container className="py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
         <div className="min-w-0">
-          <Logo size="sm" color="ink" noWrap={false} />
+          <Logo size="xs" color="ink" className="text-lg sm:text-xl lg:text-lg xl:text-xl" />
           <p className="mt-4 text-sm text-muted">
             Over 40 years of custom metal and canvas awning fabrication, serving Houston, Dallas, Fort Worth, Austin, San Antonio and the Texas Gulf Coast.
           </p>
