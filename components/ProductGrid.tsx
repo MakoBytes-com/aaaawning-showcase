@@ -46,10 +46,11 @@ export function ProductGrid() {
                   {thumb && (
                     <Image
                       src={thumb}
-                      alt={p.title}
+                      alt={`${p.title} — custom fabrication and installation by AAA Awning Co., Houston Texas`}
                       fill
                       sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                       className="object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                      loading="lazy"
                     />
                   )}
                 </div>

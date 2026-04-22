@@ -15,7 +15,7 @@ export default function Home() {
       <section className="relative h-[72vh] min-h-[560px] w-full overflow-hidden bg-navy-900 text-white">
         <video
           className="absolute inset-0 h-full w-full object-cover"
-          src="/images/hero/Prompting_Runway_for_Subtle_Animation.mp4"
+          src="/images/hero/aaa-awning-texas-projects-hero.mp4"
           autoPlay
           loop
           muted

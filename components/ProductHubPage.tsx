@@ -41,10 +41,11 @@ export function ProductHubPage({ category }: { category: ProductCategory }) {
                     {thumb ? (
                       <Image
                         src={thumb}
-                        alt={p.title}
+                        alt={`${p.title} — custom installation by AAA Awning Co. across Texas`}
                         fill
                         sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                         className="object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                        loading="lazy"
                       />
                     ) : (
                       <div className="absolute inset-0 flex items-center justify-center text-burgundy-600/30 font-serif text-3xl">

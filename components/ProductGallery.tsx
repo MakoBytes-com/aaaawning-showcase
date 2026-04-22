@@ -29,10 +29,11 @@ export function ProductGallery({ images, alt }: Props) {
             >
               <Image
                 src={src}
-                alt={`${alt} — installation ${i + 1}`}
+                alt={`Custom ${alt.toLowerCase()} installation ${i + 1} by AAA Awning Co., Houston Texas`}
                 fill
                 sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                 className="object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                loading="lazy"
               />
             </div>
           ))}

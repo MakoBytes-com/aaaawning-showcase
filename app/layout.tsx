@@ -35,15 +35,69 @@ export const metadata: Metadata = {
   },
   description:
     "Custom fabric and metal awnings, canopies, shade structures, gazebos and carports for commercial and residential projects across Houston, Dallas, Fort Worth, Austin, San Antonio and the Texas Gulf Coast. 40+ years, Sunbrella partner.",
+  applicationName: SITE.name,
+  authors: [{ name: SITE.name, url: SITE.url }],
+  generator: "Next.js",
+  keywords: [
+    "awning company Houston",
+    "custom awnings Texas",
+    "commercial awnings",
+    "residential patio awnings",
+    "retractable awnings",
+    "metal awnings",
+    "canopies Texas",
+    "Sunbrella awnings",
+    "hurricane-rated awnings",
+    "shade structures",
+    "carports",
+    "gazebos",
+    "patio curtains",
+    "Houston awning fabrication",
+    "Dallas awnings",
+    "Fort Worth awnings",
+    "Austin awnings",
+    "San Antonio awnings",
+    "Galveston awnings",
+    "Corpus Christi awnings",
+  ],
+  category: "Home Improvement",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: SITE.url,
     siteName: SITE.name,
+    title: `${SITE.name} — Custom Awnings, Canopies & Shade Structures in Texas`,
+    description:
+      "Custom fabric and metal awnings, canopies, shade structures, gazebos and carports for commercial and residential projects across Texas. 40+ years, Sunbrella partner.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${SITE.name} — Custom Awnings & Canopies in Texas`,
+    description:
+      "40+ years of custom metal and canvas awning fabrication. Houston, Dallas, Fort Worth, Austin, San Antonio, Texas Gulf Coast.",
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  alternates: {
+    canonical: SITE.url,
+  },
+  formatDetection: {
+    telephone: true,
+    address: true,
+    email: true,
+  },
+  verification: {
+    // Add google: / yandex: / etc. verification codes here when the
+    // owner claims Google Search Console.
   },
 };
 

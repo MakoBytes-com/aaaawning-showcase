@@ -102,7 +102,7 @@ export default function GalleryPage() {
                   >
                     <Image
                       src={src}
-                      alt={`${group.title} — installation ${i + 1}`}
+                      alt={`Custom ${group.title.toLowerCase()} project ${i + 1} by AAA Awning Co. — Houston, Dallas, Fort Worth, Austin, San Antonio, Texas Gulf Coast`}
                       fill
                       sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
                       className="object-cover group-hover:scale-[1.03] transition-transform duration-500"

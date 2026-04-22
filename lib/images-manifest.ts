@@ -4,10 +4,10 @@
 export const IMAGES = {
   "brand-partners": [],
   "canopies": [
-    "/images/canopies/CIMG3544-768x576-1.jpg",
-    "/images/canopies/DSCN1091-768x576-1.jpg",
-    "/images/canopies/gz1.jpg",
-    "/images/canopies/gz2.jpg"
+    "/images/canopies/commercial-canopy-01.jpg",
+    "/images/canopies/commercial-canopy-02.jpg",
+    "/images/canopies/outdoor-dining-canopy-houston-01.jpg",
+    "/images/canopies/outdoor-dining-canopy-houston-02.jpg"
   ],
   "carports": [
     "/images/carports/CARPORTS-1-1.jpg",
@@ -18,15 +18,15 @@ export const IMAGES = {
     "/images/carports/CARPORTS-5-scaled.jpg"
   ],
   "extruded-aluminum": [
-    "/images/extruded-aluminum/1-1-scaled.jpg",
-    "/images/extruded-aluminum/2-1-scaled.jpg",
-    "/images/extruded-aluminum/3-1-scaled.jpg",
-    "/images/extruded-aluminum/4-1-scaled.jpg",
-    "/images/extruded-aluminum/5-scaled.jpg",
-    "/images/extruded-aluminum/6-1-scaled.jpg",
-    "/images/extruded-aluminum/Extruded-canopy-and-louvers.jpg",
-    "/images/extruded-aluminum/Extruded-canopy..jpg",
-    "/images/extruded-aluminum/Roll-Form-canopyy.jpg"
+    "/images/extruded-aluminum/extruded-aluminum-canopy-03.jpg",
+    "/images/extruded-aluminum/extruded-aluminum-canopy-04.jpg",
+    "/images/extruded-aluminum/extruded-aluminum-canopy-05.jpg",
+    "/images/extruded-aluminum/extruded-aluminum-canopy-06.jpg",
+    "/images/extruded-aluminum/extruded-aluminum-canopy-07.jpg",
+    "/images/extruded-aluminum/extruded-aluminum-canopy-with-louvers.jpg",
+    "/images/extruded-aluminum/extruded-aluminum-walkway-cover-01.jpg",
+    "/images/extruded-aluminum/extruded-aluminum-walkway-cover-02.jpg",
+    "/images/extruded-aluminum/roll-form-canopy-commercial.jpg"
   ],
   "fabric-awnings": [
     "/images/fabric-awnings/Fabric-awnings-10.jpg",
@@ -38,31 +38,27 @@ export const IMAGES = {
     "/images/fabric-awnings/Fabric-awnings-7.jpg",
     "/images/fabric-awnings/Fabric-awnings-8.jpg",
     "/images/fabric-awnings/Fabric-awnings-9.jpg",
-    "/images/fabric-awnings/unnamed.jpg"
+    "/images/fabric-awnings/fabric-awning-residential-11.jpg"
   ],
   "gallery": [],
   "gazebos-cabanas": [
-    "/images/gazebos-cabanas/CIMG3544-768x576-1.jpg",
-    "/images/gazebos-cabanas/DSCN1091-768x576-1.jpg",
-    "/images/gazebos-cabanas/blue-canopies.jpg",
-    "/images/gazebos-cabanas/cc1-300x225-1.jpg",
-    "/images/gazebos-cabanas/gazebos-2.png",
-    "/images/gazebos-cabanas/gz1.jpg",
-    "/images/gazebos-cabanas/gz2.jpg",
-    "/images/gazebos-cabanas/gz3.jpg"
+    "/images/gazebos-cabanas/gazebo-cabana-backyard-01.jpg",
+    "/images/gazebos-cabanas/gazebo-cabana-backyard-02.jpg",
+    "/images/gazebos-cabanas/gazebo-cabana-backyard-03.jpg",
+    "/images/gazebos-cabanas/gazebo-cabana-blue-dining-shelter.jpg",
+    "/images/gazebos-cabanas/gazebo-cabana-outdoor-dining-05.jpg",
+    "/images/gazebos-cabanas/gazebo-cabana-outdoor-dining-06.jpg",
+    "/images/gazebos-cabanas/gazebo-cabana-poolside-04.jpg",
+    "/images/gazebos-cabanas/gazebos-2.png"
   ],
   "hero": [
-    "/images/hero/Prompting_Runway_for_Subtle_Animation.mp4"
+    "/images/hero/aaa-awning-texas-projects-hero.mp4"
   ],
   "locations": [],
   "logo": [
     "/images/logo/aaa-awning-co-inc.png"
   ],
   "metal-awnings": [
-    "/images/metal-awnings/m1.jpg",
-    "/images/metal-awnings/m3.jpg",
-    "/images/metal-awnings/m4.jpg",
-    "/images/metal-awnings/m5.jpg",
     "/images/metal-awnings/metal-awning-1.jpg",
     "/images/metal-awnings/metal-awning-10.jpg",
     "/images/metal-awnings/metal-awning-2.jpg",
@@ -72,7 +68,11 @@ export const IMAGES = {
     "/images/metal-awnings/metal-awning-6-scaled.jpg",
     "/images/metal-awnings/metal-awning-7.jpg",
     "/images/metal-awnings/metal-awning-8.jpg",
-    "/images/metal-awnings/metal-awning-9.jpg"
+    "/images/metal-awnings/metal-awning-9.jpg",
+    "/images/metal-awnings/metal-awning-panel-01.jpg",
+    "/images/metal-awnings/metal-awning-panel-03.jpg",
+    "/images/metal-awnings/metal-awning-panel-04.jpg",
+    "/images/metal-awnings/metal-awning-panel-05.jpg"
   ],
   "motorized-screens": [],
   "patio-curtains": [
@@ -82,17 +82,17 @@ export const IMAGES = {
     "/images/patio-curtains/Curtains-4.jpg",
     "/images/patio-curtains/Curtains-5.jpg",
     "/images/patio-curtains/Curtains-6.jpg",
-    "/images/patio-curtains/Patio-Curtains-270x270-1.jpg",
-    "/images/patio-curtains/Patio-Shade-2.jpg",
-    "/images/patio-curtains/Patio-Shade-3.jpg",
-    "/images/patio-curtains/z-dolce-vida.jpg"
+    "/images/patio-curtains/patio-curtain-installation.jpg",
+    "/images/patio-curtains/patio-curtain-residential-dolce-vida.jpg",
+    "/images/patio-curtains/patio-curtain-shade-02.jpg",
+    "/images/patio-curtains/patio-curtain-shade-03.jpg"
   ],
   "process": [],
   "retractable-awnings": [
-    "/images/retractable-awnings/12100-Retractable-Patio-Awnings-Elite.jpg"
+    "/images/retractable-awnings/retractable-patio-awning-elite.jpg"
   ],
   "shade-sails": [
-    "/images/shade-sails/outdoor-canopies.jpg"
+    "/images/shade-sails/shade-sail-residential-01.jpg"
   ],
   "shade-structures": [
     "/images/shade-structures/Shade-Structures-1.jpg",

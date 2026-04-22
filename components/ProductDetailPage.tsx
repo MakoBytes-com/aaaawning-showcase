@@ -28,7 +28,7 @@ export function ProductDetailPage({ product }: { product: Product }) {
           <>
             <Image
               src={heroImage}
-              alt={`${product.title} — AAA Awning installation`}
+              alt={`Custom ${product.title.toLowerCase()} — ${product.shortBlurb} Fabricated and installed by AAA Awning Co., Houston Texas.`}
               fill
               priority
               sizes="100vw"
