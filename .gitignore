@@ -41,4 +41,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# next-sitemap generated files (regenerated on build)
+/public/sitemap.xml
+/public/sitemap-*.xml
+/public/robots.txt
+
 .vercel

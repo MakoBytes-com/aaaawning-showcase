@@ -4,7 +4,9 @@ import "./globals.css";
 import { TopBar } from "@/components/TopBar";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { JsonLd } from "@/components/JsonLd";
 import { SITE } from "@/lib/site";
+import { organizationSchema, localBusinessSchema } from "@/lib/schema";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -56,6 +58,7 @@ export default function RootLayout({
       className={`${inter.variable} ${playfair.variable} ${pinyon.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-white text-ink">
+        <JsonLd data={[organizationSchema(), localBusinessSchema()]} />
         <TopBar />
         <Header />
         <main className="flex-1 flex flex-col">{children}</main>

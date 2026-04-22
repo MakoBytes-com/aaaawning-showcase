@@ -331,56 +331,9 @@ export const PRODUCTS: Product[] = [
     ],
   },
 
-  {
-    slug: "shapes-styles",
-    category: "awnings-canopies",
-    imageFolder: "gallery",
-    title: "Awning Shapes & Styles",
-    breadcrumb: "Awnings & Canopies · Shapes & Styles",
-    shortBlurb:
-      "Standard and custom awning shapes — dome, shed, waterfall, quarter-barrel, and more.",
-    intro: [
-      "Awnings have a surprisingly rich vocabulary of shapes. Each profile throws shade differently, reads differently from the street, and fits different kinds of facades. Here's a quick tour of what we build.",
-    ],
-    features: [
-      {
-        title: "Shed / slope",
-        body: "The classic rectangular awning, angled down. Workhorse profile for storefronts and windows.",
-      },
-      {
-        title: "Dome",
-        body: "Rounded front, most common over residential doors and retail entryways. Warm, inviting look.",
-      },
-      {
-        title: "Waterfall",
-        body: "Curved front face with straight sides — elegant and modern, common in hospitality.",
-      },
-      {
-        title: "Quarter-barrel",
-        body: "Cylindrical half-section — sculptural, bold, used on high-end restaurants and custom residential.",
-      },
-      {
-        title: "Concave / convex",
-        body: "Curved inward or outward — custom architectural profiles matched to building lines.",
-      },
-      {
-        title: "Gable",
-        body: "Triangular front, reads like a small roof. Great for traditional facades.",
-      },
-      {
-        title: "Mansard",
-        body: "French-style four-sided angled profile. Distinctive and historical.",
-      },
-      {
-        title: "Custom",
-        body: "Anything you can draw, we can probably build. Bring us a sketch.",
-      },
-    ],
-    useCases: [],
-  },
-
   // Color Charts is a static page at app/awnings-canopies/color-charts/page.tsx
-  // — not in PRODUCTS so it doesn't collide with the dynamic [slug] route.
+  // Shapes & Styles is a static page at app/awnings-canopies/shapes-styles/page.tsx
+  // Both intentionally out of PRODUCTS so they don't collide with the dynamic [slug] route.
 
   // Shade & Curtains
   {

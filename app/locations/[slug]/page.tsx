@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { PlaceholderPage } from "@/components/PlaceholderPage";
-import { LOCATIONS, getLocationBySlug, METRO_LABEL } from "@/lib/locations";
+import { LocationDetailPage } from "@/components/LocationDetailPage";
+import { LOCATIONS, getLocationBySlug } from "@/lib/locations";
 
 export function generateStaticParams() {
   return LOCATIONS.map((l) => ({ slug: l.slug }));
@@ -16,7 +16,7 @@ export async function generateMetadata({
   const loc = getLocationBySlug(slug);
   if (!loc) return { title: "Location Not Found" };
   return {
-    title: `${loc.name} — Awnings, Canopies & Shade Structures`,
+    title: `${loc.name}, TX — Custom Awnings & Canopies`,
     description: loc.blurb,
   };
 }
@@ -30,11 +30,5 @@ export default async function LocationPage({
   const loc = getLocationBySlug(slug);
   if (!loc) notFound();
 
-  return (
-    <PlaceholderPage
-      eyebrow={METRO_LABEL[loc.metro]}
-      title={loc.headline}
-      description={loc.blurb}
-    />
-  );
+  return <LocationDetailPage location={loc} />;
 }
