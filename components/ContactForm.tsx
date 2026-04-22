@@ -39,6 +39,20 @@ export function ContactForm({ turnstileSiteKey }: { turnstileSiteKey?: string })
 
   return (
     <form action={formAction} className="space-y-5">
+      {/* Honeypot — hidden from humans, usually filled by bots. Keep visually off-screen + aria-hidden. */}
+      <div aria-hidden="true" className="absolute left-[-9999px] top-auto h-0 w-0 overflow-hidden">
+        <label>
+          Leave this field empty
+          <input
+            type="text"
+            name="website"
+            tabIndex={-1}
+            autoComplete="off"
+            defaultValue=""
+          />
+        </label>
+      </div>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <Field label="Name" name="name" required autoComplete="name" />
         <Field label="Email" name="email" type="email" required autoComplete="email" />

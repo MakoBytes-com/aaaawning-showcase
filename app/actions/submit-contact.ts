@@ -1,7 +1,9 @@
 "use server";
 
 import { Resend } from "resend";
+import { headers } from "next/headers";
 import { SITE } from "@/lib/site";
+import { rateLimit } from "@/lib/rate-limit";
 
 export type ContactFormState = {
   status: "idle" | "success" | "error";
@@ -15,6 +17,7 @@ type ContactInput = {
   city: string;
   projectType: string;
   message: string;
+  website: string; // honeypot — must be empty
   turnstileToken: string;
 };
 
@@ -39,6 +42,18 @@ async function verifyTurnstile(token: string, ip?: string): Promise<boolean> {
   return Boolean(data.success);
 }
 
+async function getClientIp(): Promise<string> {
+  const h = await headers();
+  // Vercel's proxy chain — first IP in x-forwarded-for is the real client
+  const fwd = h.get("x-forwarded-for");
+  if (fwd) return fwd.split(",")[0]?.trim() || "unknown";
+  return h.get("x-real-ip") || "unknown";
+}
+
+function isLikelyEmail(s: string): boolean {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s);
+}
+
 export async function submitContact(
   _prev: ContactFormState,
   formData: FormData,
@@ -50,14 +65,51 @@ export async function submitContact(
     city: String(formData.get("city") ?? "").trim(),
     projectType: String(formData.get("projectType") ?? "").trim(),
     message: String(formData.get("message") ?? "").trim(),
+    website: String(formData.get("website") ?? "").trim(), // honeypot
     turnstileToken: String(formData.get("cf-turnstile-response") ?? ""),
   };
 
+  // Honeypot — bots fill every field. Silently drop, return "success" so
+  // the bot moves on and doesn't retry with a different strategy.
+  if (input.website) {
+    console.warn("[contact] honeypot triggered — dropping submission");
+    return {
+      status: "success",
+      message: "Thanks — we got it. We'll reach out within one business day.",
+    };
+  }
+
+  // Length guards — keep payloads sane, make floods harder
+  if (input.name.length > 200 || input.email.length > 200) {
+    return { status: "error", message: "That looks too long. Please shorten and try again." };
+  }
+  if (input.message.length > 5000) {
+    return {
+      status: "error",
+      message: "Your message is over the 5000-character limit. Please shorten it and try again.",
+    };
+  }
+
+  // Basic required + email sanity
   if (!input.name || !input.email || !input.message) {
     return { status: "error", message: "Please fill in your name, email, and a short message." };
   }
+  if (!isLikelyEmail(input.email)) {
+    return { status: "error", message: "That email address doesn't look right — please double-check." };
+  }
 
-  const captchaOk = await verifyTurnstile(input.turnstileToken);
+  // Per-IP rate limit: 3 submissions per 15 minutes per client
+  const ip = await getClientIp();
+  const rl = rateLimit(`contact:${ip}`, { limit: 3, windowMs: 15 * 60 * 1000 });
+  if (!rl.allowed) {
+    const minutes = Math.ceil(rl.resetMs / 60000);
+    return {
+      status: "error",
+      message: `Too many recent submissions. Please wait about ${minutes} minute${minutes === 1 ? "" : "s"} before trying again, or call our office directly.`,
+    };
+  }
+
+  const captchaOk = await verifyTurnstile(input.turnstileToken, ip === "unknown" ? undefined : ip);
   if (!captchaOk) {
     return {
       status: "error",
@@ -88,6 +140,7 @@ export async function submitContact(
     `Phone:        ${input.phone || "(not provided)"}`,
     `City:         ${input.city || "(not provided)"}`,
     `Project:      ${input.projectType || "(not provided)"}`,
+    `Client IP:    ${ip}`,
     ``,
     `Message:`,
     input.message,
