@@ -1,7 +1,7 @@
 import Link from "next/link";
-import Image from "next/image";
 import { FacebookIcon, InstagramIcon } from "./icons/Social";
 import { Container } from "./Container";
+import { Logo } from "./Logo";
 import { OFFICES, HOURS, SITE, SOCIAL } from "@/lib/site";
 
 const FOOTER_LINKS_A = [
@@ -25,13 +25,7 @@ export function Footer() {
     <footer className="mt-auto bg-zinc-100 text-ink">
       <Container className="py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
         <div>
-          <Image
-            src="/images/logo/aaa-awning-co-inc.png"
-            alt="AAA Awning Co. Inc."
-            width={280}
-            height={42}
-            className="h-auto w-56"
-          />
+          <Logo size="md" color="ink" />
           <p className="mt-4 text-sm text-muted">
             Over 40 years of custom metal and canvas awning fabrication, serving Houston, Dallas, Fort Worth, Austin, San Antonio and the Texas Gulf Coast.
           </p>

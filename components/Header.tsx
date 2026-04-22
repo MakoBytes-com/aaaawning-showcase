@@ -1,10 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useState } from "react";
 import { Phone, Menu, X, ChevronDown } from "lucide-react";
 import { Container } from "./Container";
+import { Logo } from "./Logo";
 import { NAV, OFFICES } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
@@ -15,14 +15,7 @@ export function Header() {
     <header className="sticky top-0 z-40 bg-white shadow-sm">
       <Container className="flex items-center justify-between gap-6 py-4">
         <Link href="/" aria-label="AAA Awning Co. Inc. home" className="flex-shrink-0">
-          <Image
-            src="/images/logo/aaa-awning-co-inc.png"
-            alt="AAA Awning Co. Inc."
-            width={320}
-            height={48}
-            priority
-            className="h-10 w-auto sm:h-12"
-          />
+          <Logo size="sm" color="ink" />
         </Link>
 
         <div className="hidden lg:flex items-center gap-4 text-sm">

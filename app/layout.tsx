@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter, Playfair_Display, Pinyon_Script } from "next/font/google";
 import "./globals.css";
 import { TopBar } from "@/components/TopBar";
 import { Header } from "@/components/Header";
@@ -15,6 +15,13 @@ const inter = Inter({
 const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair",
+  display: "swap",
+});
+
+const pinyon = Pinyon_Script({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-pinyon",
   display: "swap",
 });
 
@@ -46,7 +53,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${playfair.variable} h-full antialiased`}
+      className={`${inter.variable} ${playfair.variable} ${pinyon.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-white text-ink">
         <TopBar />
