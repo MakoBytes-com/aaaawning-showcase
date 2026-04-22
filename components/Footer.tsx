@@ -8,6 +8,7 @@ const FOOTER_LINKS_A = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
   { label: "Gallery", href: "/gallery" },
+  { label: "FAQ", href: "/faq" },
   { label: "Contact Us", href: "/contact" },
 ];
 
@@ -15,6 +16,7 @@ const FOOTER_LINKS_B = [
   { label: "Awnings & Canopies", href: "/awnings-canopies" },
   { label: "Shade & Curtains", href: "/shade-curtains" },
   { label: "Hurricane Season", href: "/hurricane-season" },
+  { label: "Locations", href: "/locations" },
   { label: "Careers", href: "/careers" },
 ];
 

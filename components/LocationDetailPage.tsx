@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Container } from "./Container";
 import { CTAStrip } from "./CTAStrip";
 import { JsonLd } from "./JsonLd";
+import { FAQSection } from "./FAQSection";
 import {
   type Location,
   METRO_LABEL,
@@ -11,6 +12,7 @@ import {
 import { OFFICES, SITE } from "@/lib/site";
 import { PRODUCTS } from "@/lib/products";
 import { cityLocalBusinessSchema, breadcrumbSchema } from "@/lib/schema";
+import { getLocationFaqs } from "@/lib/location-faqs";
 import { Check, Phone, ChevronRight, MapPin } from "lucide-react";
 
 const FEATURED_PRODUCTS = [
@@ -203,6 +205,12 @@ export function LocationDetailPage({ location }: { location: Location }) {
           </Container>
         </section>
       )}
+
+      <FAQSection
+        eyebrow={`${location.name} FAQs`}
+        heading={`Questions we hear from ${location.name} customers`}
+        faqs={getLocationFaqs(location)}
+      />
 
       <CTAStrip
         heading={`Free estimate in ${location.name}`}

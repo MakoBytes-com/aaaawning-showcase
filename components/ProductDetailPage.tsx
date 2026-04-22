@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Container } from "./Container";
 import { CTAStrip } from "./CTAStrip";
 import { ProductGallery } from "./ProductGallery";
+import { FAQSection } from "./FAQSection";
 import { Check, ChevronRight, ArrowRight } from "lucide-react";
 import {
   type Product,
@@ -10,6 +11,7 @@ import {
   CATEGORIES,
 } from "@/lib/products";
 import { getImages } from "@/lib/images-manifest";
+import { getProductFaqs } from "@/lib/product-faqs";
 
 export function ProductDetailPage({ product }: { product: Product }) {
   const related = getProductsByCategory(product.category).filter(
@@ -138,22 +140,12 @@ export function ProductDetailPage({ product }: { product: Product }) {
 
       <ProductGallery images={images} alt={product.title} />
 
-      {product.faqs && product.faqs.length > 0 && (
-        <section className="py-16 sm:py-20 bg-cream">
-          <Container className="max-w-3xl">
-            <div className="section-label text-sm">Questions we get a lot</div>
-            <h2 className="mt-4 text-3xl font-serif text-ink">FAQs</h2>
-            <div className="mt-8 space-y-6">
-              {product.faqs.map((f) => (
-                <div key={f.q} className="border-b border-zinc-200 pb-6 last:border-b-0">
-                  <h3 className="font-semibold text-ink">{f.q}</h3>
-                  <p className="mt-2 text-muted leading-relaxed">{f.a}</p>
-                </div>
-              ))}
-            </div>
-          </Container>
-        </section>
-      )}
+      <FAQSection
+        eyebrow={`${product.title} FAQs`}
+        heading={`Questions we get about ${product.title.toLowerCase()}`}
+        faqs={getProductFaqs(product.slug)}
+      />
+
 
       {related.length > 0 && (
         <section className="py-16 sm:py-20 bg-white">

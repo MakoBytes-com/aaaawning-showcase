@@ -74,6 +74,7 @@ export const NAV = [
   { label: "Hurricane Season", href: "/hurricane-season" },
   { label: "Gallery", href: "/gallery" },
   { label: "Locations", href: "/locations" },
+  { label: "FAQ", href: "/faq" },
   { label: "Careers", href: "/careers" },
   { label: "Contact", href: "/contact" },
 ] as const;
