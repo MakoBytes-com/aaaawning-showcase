@@ -1,17 +1,12 @@
 import type { Metadata } from "next";
-import { PlaceholderPage } from "@/components/PlaceholderPage";
+import { ProductHubPage } from "@/components/ProductHubPage";
 
 export const metadata: Metadata = {
   title: "Shade & Curtains",
-  description: "Shade structures, sails, patio curtains, and motorized screens for outdoor comfort.",
+  description:
+    "Shade structures, shade sails, patio curtains, and motorized screens for outdoor comfort across Texas.",
 };
 
 export default function Page() {
-  return (
-    <PlaceholderPage
-      eyebrow="Products"
-      title="Shade & Curtains"
-      description="Shade structures, sails, patio curtains, and motorized screens for outdoor comfort."
-    />
-  );
+  return <ProductHubPage category="shade-curtains" />;
 }

@@ -1,17 +1,12 @@
 import type { Metadata } from "next";
-import { PlaceholderPage } from "@/components/PlaceholderPage";
+import { ProductHubPage } from "@/components/ProductHubPage";
 
 export const metadata: Metadata = {
   title: "Awnings & Canopies",
-  description: "Custom fabric and metal awnings, canopies, carports, gazebos and more — built in Houston.",
+  description:
+    "Custom fabric and metal awnings, canopies, carports, gazebos, retractables, walkway covers — designed, fabricated, and installed across Texas.",
 };
 
 export default function Page() {
-  return (
-    <PlaceholderPage
-      eyebrow="Products"
-      title="Awnings & Canopies"
-      description="Custom fabric and metal awnings, canopies, carports, gazebos and more — built in Houston."
-    />
-  );
+  return <ProductHubPage category="awnings-canopies" />;
 }
