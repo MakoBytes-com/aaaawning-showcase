@@ -3,6 +3,8 @@ export type ProductCategory = "awnings-canopies" | "shade-curtains";
 export type Product = {
   slug: string;
   category: ProductCategory;
+  /** Matches a folder under public/images/ — source of gallery + hero imagery */
+  imageFolder: string;
   title: string;
   breadcrumb: string;
   shortBlurb: string;
@@ -37,6 +39,7 @@ export const PRODUCTS: Product[] = [
   {
     slug: "fabric-awnings",
     category: "awnings-canopies",
+    imageFolder: "fabric-awnings",
     title: "Fabric Awnings",
     breadcrumb: "Awnings & Canopies · Fabric Awnings",
     shortBlurb:
@@ -100,6 +103,7 @@ export const PRODUCTS: Product[] = [
   {
     slug: "metal-awnings",
     category: "awnings-canopies",
+    imageFolder: "metal-awnings",
     title: "Metal Awnings",
     breadcrumb: "Awnings & Canopies · Metal Awnings",
     shortBlurb:
@@ -139,6 +143,7 @@ export const PRODUCTS: Product[] = [
   {
     slug: "extruded-aluminum",
     category: "awnings-canopies",
+    imageFolder: "extruded-aluminum",
     title: "Extruded Aluminum Awnings, Walkway Covers & Canopies",
     breadcrumb: "Awnings & Canopies · Extruded Aluminum",
     shortBlurb:
@@ -177,6 +182,7 @@ export const PRODUCTS: Product[] = [
   {
     slug: "retractable",
     category: "awnings-canopies",
+    imageFolder: "retractable-awnings",
     title: "Retractable Awnings",
     breadcrumb: "Awnings & Canopies · Retractable Awnings",
     shortBlurb:
@@ -215,6 +221,7 @@ export const PRODUCTS: Product[] = [
   {
     slug: "canopies",
     category: "awnings-canopies",
+    imageFolder: "canopies",
     title: "Canopies",
     breadcrumb: "Awnings & Canopies · Canopies",
     shortBlurb:
@@ -249,6 +256,7 @@ export const PRODUCTS: Product[] = [
   {
     slug: "carports",
     category: "awnings-canopies",
+    imageFolder: "carports",
     title: "Carports",
     breadcrumb: "Awnings & Canopies · Carports",
     shortBlurb:
@@ -287,6 +295,7 @@ export const PRODUCTS: Product[] = [
   {
     slug: "gazebos-cabanas",
     category: "awnings-canopies",
+    imageFolder: "gazebos-cabanas",
     title: "Gazebos & Cabanas",
     breadcrumb: "Awnings & Canopies · Gazebos / Cabanas",
     shortBlurb:
@@ -325,6 +334,7 @@ export const PRODUCTS: Product[] = [
   {
     slug: "shapes-styles",
     category: "awnings-canopies",
+    imageFolder: "gallery",
     title: "Awning Shapes & Styles",
     breadcrumb: "Awnings & Canopies · Shapes & Styles",
     shortBlurb:
@@ -372,6 +382,7 @@ export const PRODUCTS: Product[] = [
   {
     slug: "color-charts",
     category: "awnings-canopies",
+    imageFolder: "brand-partners",
     title: "Fabric & Metal Color Charts",
     breadcrumb: "Awnings & Canopies · Color Charts",
     shortBlurb:
@@ -409,6 +420,7 @@ export const PRODUCTS: Product[] = [
   {
     slug: "shade-structures",
     category: "shade-curtains",
+    imageFolder: "shade-structures",
     title: "Shade Structures",
     breadcrumb: "Shade & Curtains · Shade Structures",
     shortBlurb:
@@ -448,6 +460,7 @@ export const PRODUCTS: Product[] = [
   {
     slug: "shade-sails",
     category: "shade-curtains",
+    imageFolder: "shade-sails",
     title: "Shade Sails",
     breadcrumb: "Shade & Curtains · Shade Sails",
     shortBlurb:
@@ -486,6 +499,7 @@ export const PRODUCTS: Product[] = [
   {
     slug: "patio-curtains",
     category: "shade-curtains",
+    imageFolder: "patio-curtains",
     title: "Patio Curtains",
     breadcrumb: "Shade & Curtains · Patio Curtains",
     shortBlurb:
@@ -524,6 +538,7 @@ export const PRODUCTS: Product[] = [
   {
     slug: "motorized-screens",
     category: "shade-curtains",
+    imageFolder: "motorized-screens",
     title: "Exterior Motorized Screens",
     breadcrumb: "Shade & Curtains · Motorized Screens",
     shortBlurb:

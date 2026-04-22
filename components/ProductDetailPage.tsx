@@ -1,24 +1,47 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "./Container";
 import { CTAStrip } from "./CTAStrip";
+import { ProductGallery } from "./ProductGallery";
 import { Check, ChevronRight, ArrowRight } from "lucide-react";
 import {
   type Product,
   getProductsByCategory,
   CATEGORIES,
 } from "@/lib/products";
+import { getImages } from "@/lib/images-manifest";
 
 export function ProductDetailPage({ product }: { product: Product }) {
   const related = getProductsByCategory(product.category).filter(
     (p) => p.slug !== product.slug,
   );
   const cat = CATEGORIES[product.category];
+  const images = getImages(product.imageFolder);
+  const heroImage = images[0];
 
   return (
     <>
-      <section className="bg-burgundy-600 text-white">
-        <Container className="py-14 sm:py-18">
-          <nav className="text-xs sm:text-sm text-white/80 mb-3" aria-label="Breadcrumb">
+      <section className="relative bg-navy-900 text-white overflow-hidden">
+        {heroImage && (
+          <>
+            <Image
+              src={heroImage}
+              alt={`${product.title} — AAA Awning installation`}
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover opacity-40"
+            />
+            <div
+              className="absolute inset-0 bg-gradient-to-r from-burgundy-700/90 via-burgundy-700/75 to-burgundy-700/50"
+              aria-hidden="true"
+            />
+          </>
+        )}
+        {!heroImage && <div className="absolute inset-0 bg-burgundy-600" aria-hidden="true" />}
+
+        <Container className="relative z-10 py-16 sm:py-20">
+          <nav className="text-xs sm:text-sm text-white/85 mb-3" aria-label="Breadcrumb">
             <Link href="/" className="hover:text-white">Home</Link>
             <span className="mx-2 opacity-60">/</span>
             <Link href={`/${product.category}`} className="hover:text-white">
@@ -28,7 +51,7 @@ export function ProductDetailPage({ product }: { product: Product }) {
             <span className="text-white">{product.title}</span>
           </nav>
           <h1 className="text-3xl sm:text-5xl font-serif">{product.title}</h1>
-          <p className="mt-4 max-w-2xl text-lg text-white/90">{product.shortBlurb}</p>
+          <p className="mt-4 max-w-2xl text-lg text-white/95">{product.shortBlurb}</p>
         </Container>
       </section>
 
@@ -113,8 +136,10 @@ export function ProductDetailPage({ product }: { product: Product }) {
         </section>
       )}
 
+      <ProductGallery images={images} alt={product.title} />
+
       {product.faqs && product.faqs.length > 0 && (
-        <section className="py-16 sm:py-20 bg-white">
+        <section className="py-16 sm:py-20 bg-cream">
           <Container className="max-w-3xl">
             <div className="section-label text-sm">Questions we get a lot</div>
             <h2 className="mt-4 text-3xl font-serif text-ink">FAQs</h2>
@@ -131,7 +156,7 @@ export function ProductDetailPage({ product }: { product: Product }) {
       )}
 
       {related.length > 0 && (
-        <section className="py-16 sm:py-20 bg-cream">
+        <section className="py-16 sm:py-20 bg-white">
           <Container>
             <div className="flex items-end justify-between gap-4">
               <div>
