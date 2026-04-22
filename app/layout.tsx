@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display, Pinyon_Script } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { TopBar } from "@/components/TopBar";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLd";
+import { UmamiAnalytics } from "@/components/UmamiAnalytics";
 import { SITE } from "@/lib/site";
 import { organizationSchema, localBusinessSchema } from "@/lib/schema";
 
@@ -117,6 +120,9 @@ export default function RootLayout({
         <Header />
         <main className="flex-1 flex flex-col">{children}</main>
         <Footer />
+        <UmamiAnalytics />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

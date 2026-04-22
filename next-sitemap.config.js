@@ -34,10 +34,11 @@ module.exports = {
       lastmod: new Date().toISOString(),
     };
   },
+  exclude: ["/admin", "/admin/*"],
   robotsTxtOptions: {
     policies: [
       { userAgent: "*", allow: "/" },
-      { userAgent: "*", disallow: ["/api/"] },
+      { userAgent: "*", disallow: ["/api/", "/admin/"] },
     ],
   },
 };
