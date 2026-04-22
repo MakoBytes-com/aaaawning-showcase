@@ -13,6 +13,7 @@ import { OFFICES, SITE } from "@/lib/site";
 import { PRODUCTS } from "@/lib/products";
 import { cityLocalBusinessSchema, breadcrumbSchema } from "@/lib/schema";
 import { getLocationFaqs } from "@/lib/location-faqs";
+import { getLocationContent } from "@/lib/location-content";
 import { Check, Phone, ChevronRight, MapPin } from "lucide-react";
 
 const FEATURED_PRODUCTS = [
@@ -30,6 +31,9 @@ export function LocationDetailPage({ location }: { location: Location }) {
   const nearby = getNearbyLocations(location.slug, 6);
   const office = OFFICES[METRO_OFFICE[location.metro]];
   const url = `${SITE.url}/locations/${location.slug}`;
+  const content = getLocationContent(location.slug);
+  const genericFaqs = getLocationFaqs(location);
+  const allFaqs = [...(content.extraFaqs ?? []), ...genericFaqs];
 
   const featuredProducts = FEATURED_PRODUCTS.map((slug) =>
     PRODUCTS.find((p) => p.slug === slug),
@@ -71,6 +75,7 @@ export function LocationDetailPage({ location }: { location: Location }) {
         </Container>
       </section>
 
+      {/* Overview + Closest Office sidebar */}
       <section className="py-16 sm:py-20 bg-white">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
@@ -82,7 +87,7 @@ export function LocationDetailPage({ location }: { location: Location }) {
               ))}
             </div>
 
-            <aside className="bg-cream rounded-lg p-6 border border-zinc-200">
+            <aside className="bg-cream rounded-lg p-6 border border-zinc-200 h-fit">
               <div className="section-label text-xs">Closest Office</div>
               <div className="mt-4 space-y-3 text-sm">
                 <div className="font-semibold text-ink text-base">
@@ -122,6 +127,49 @@ export function LocationDetailPage({ location }: { location: Location }) {
         </Container>
       </section>
 
+      {/* Climate / weather context */}
+      {content.climate && content.climate.length > 0 && (
+        <section className="py-16 sm:py-20 bg-cream">
+          <Container>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+              <div>
+                <div className="section-label text-sm">Texas Climate, Locally</div>
+                <h2 className="mt-4 text-3xl font-serif text-ink">
+                  Weather in {location.name}, and what it means for your awning.
+                </h2>
+              </div>
+              <div className="lg:col-span-2 space-y-5 text-ink leading-relaxed">
+                {content.climate.map((para, i) => (
+                  <p key={i}>{para}</p>
+                ))}
+              </div>
+            </div>
+          </Container>
+        </section>
+      )}
+
+      {/* Product focus — what works here */}
+      {content.productFocus && content.productFocus.length > 0 && (
+        <section className="py-16 sm:py-20 bg-white">
+          <Container>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+              <div>
+                <div className="section-label text-sm">What Gets Picked Here</div>
+                <h2 className="mt-4 text-3xl font-serif text-ink">
+                  Popular products in {location.name}.
+                </h2>
+              </div>
+              <div className="lg:col-span-2 space-y-5 text-ink leading-relaxed">
+                {content.productFocus.map((para, i) => (
+                  <p key={i}>{para}</p>
+                ))}
+              </div>
+            </div>
+          </Container>
+        </section>
+      )}
+
+      {/* Highlights grid */}
       {location.highlights.length > 0 && (
         <section className="py-16 sm:py-20 bg-cream">
           <Container>
@@ -146,6 +194,49 @@ export function LocationDetailPage({ location }: { location: Location }) {
         </section>
       )}
 
+      {/* Commercial context */}
+      {content.commercial && content.commercial.length > 0 && (
+        <section className="py-16 sm:py-20 bg-white">
+          <Container>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+              <div>
+                <div className="section-label text-sm">Commercial in {location.name}</div>
+                <h2 className="mt-4 text-3xl font-serif text-ink">
+                  Where we work around town.
+                </h2>
+              </div>
+              <div className="lg:col-span-2 space-y-5 text-ink leading-relaxed">
+                {content.commercial.map((para, i) => (
+                  <p key={i}>{para}</p>
+                ))}
+              </div>
+            </div>
+          </Container>
+        </section>
+      )}
+
+      {/* Process / timing / permits */}
+      {content.process && content.process.length > 0 && (
+        <section className="py-16 sm:py-20 bg-cream">
+          <Container>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+              <div>
+                <div className="section-label text-sm">Timing &amp; Process</div>
+                <h2 className="mt-4 text-3xl font-serif text-ink">
+                  How projects run in {location.name}.
+                </h2>
+              </div>
+              <div className="lg:col-span-2 space-y-5 text-ink leading-relaxed">
+                {content.process.map((para, i) => (
+                  <p key={i}>{para}</p>
+                ))}
+              </div>
+            </div>
+          </Container>
+        </section>
+      )}
+
+      {/* Products we install here */}
       <section className="py-16 sm:py-20 bg-white">
         <Container>
           <div className="max-w-2xl">
@@ -154,8 +245,8 @@ export function LocationDetailPage({ location }: { location: Location }) {
               Every AAA product is available in {location.name}.
             </h2>
             <p className="mt-3 text-muted">
-              We fabricate in our Houston shop and dispatch crews to your property.
-              No local subcontractors.
+              We fabricate in our Houston shop and dispatch our own crews to your
+              property. No local subcontractors.
             </p>
           </div>
           <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
@@ -173,6 +264,14 @@ export function LocationDetailPage({ location }: { location: Location }) {
         </Container>
       </section>
 
+      {/* FAQs — city-specific first, then generic */}
+      <FAQSection
+        eyebrow={`${location.name} FAQs`}
+        heading={`Questions we hear from ${location.name} customers`}
+        faqs={allFaqs}
+      />
+
+      {/* Nearby cities */}
       {nearby.length > 0 && (
         <section className="py-16 sm:py-20 bg-cream border-t border-zinc-200">
           <Container>
@@ -205,12 +304,6 @@ export function LocationDetailPage({ location }: { location: Location }) {
           </Container>
         </section>
       )}
-
-      <FAQSection
-        eyebrow={`${location.name} FAQs`}
-        heading={`Questions we hear from ${location.name} customers`}
-        faqs={getLocationFaqs(location)}
-      />
 
       <CTAStrip
         heading={`Free estimate in ${location.name}`}
