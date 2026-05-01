@@ -12,6 +12,18 @@ import { CTAStrip } from "@/components/CTAStrip";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
+  openGraph: {
+    url: "/",
+    title:
+      "AAA Awning Co., Inc. — Custom Awnings, Canopies & Shade Structures in Texas",
+    description:
+      "Custom fabric and metal awnings, canopies, and shade structures for Texas homes and businesses. Houston-based since 1984.",
+  },
+  twitter: {
+    title: "AAA Awning Co., Inc. — Custom Awnings & Canopies in Texas",
+    description:
+      "Custom fabric and metal awning fabrication in Houston since 1984. Serving Houston, Dallas, Fort Worth, Austin, San Antonio.",
+  },
 };
 
 export default function Home() {
@@ -25,6 +37,7 @@ export default function Home() {
           loop
           muted
           playsInline
+          aria-label="Showcase footage of AAA Awning custom awning, canopy, and shade-structure installations across Texas."
         />
         <div
           className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/10"

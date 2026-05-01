@@ -15,10 +15,13 @@ export async function generateMetadata({
   const { slug } = await params;
   const loc = getLocationBySlug(slug);
   if (!loc) return { title: "Location Not Found" };
+  const url = `/locations/${loc.slug}`;
   return {
-    title: `${loc.name}, TX — Custom Awnings & Canopies`,
+    title: loc.headline,
     description: loc.blurb,
-    alternates: { canonical: `/locations/${loc.slug}` },
+    alternates: { canonical: url },
+    openGraph: { title: loc.headline, description: loc.blurb, url },
+    twitter: { title: loc.headline, description: loc.blurb },
   };
 }
 

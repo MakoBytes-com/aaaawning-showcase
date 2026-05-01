@@ -5,11 +5,16 @@ import { JsonLd } from "@/components/JsonLd";
 import { FAQ_GROUPS, flattenedFaqs } from "@/lib/faqs";
 import { faqSchema } from "@/lib/schema";
 
+const OG_TITLE = "Awning FAQs — Estimates, Materials, Hurricane Ratings";
+const OG_DESCRIPTION =
+  "Answers to the most common questions about AAA Awning Co. — estimates, materials, timelines, warranty, hurricane ratings, service areas, and more.";
+
 export const metadata: Metadata = {
   title: "Frequently Asked Questions",
-  description:
-    "Answers to the most common questions about AAA Awning Co. — estimates, materials, timelines, warranty, hurricane ratings, service areas, and more.",
+  description: OG_DESCRIPTION,
   alternates: { canonical: "/faq" },
+  openGraph: { title: OG_TITLE, description: OG_DESCRIPTION, url: "/faq" },
+  twitter: { title: OG_TITLE, description: OG_DESCRIPTION },
 };
 
 export default function FAQPage() {

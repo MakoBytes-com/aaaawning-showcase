@@ -4,6 +4,7 @@ import { Container } from "./Container";
 import { CTAStrip } from "./CTAStrip";
 import { ProductGallery } from "./ProductGallery";
 import { FAQSection } from "./FAQSection";
+import { JsonLd } from "./JsonLd";
 import { Check, ChevronRight, ArrowRight } from "lucide-react";
 import {
   type Product,
@@ -12,6 +13,8 @@ import {
 } from "@/lib/products";
 import { getImages } from "@/lib/images-manifest";
 import { getProductFaqs } from "@/lib/product-faqs";
+import { SITE } from "@/lib/site";
+import { serviceSchema, breadcrumbSchema } from "@/lib/schema";
 
 export function ProductDetailPage({ product }: { product: Product }) {
   const related = getProductsByCategory(product.category).filter(
@@ -20,9 +23,25 @@ export function ProductDetailPage({ product }: { product: Product }) {
   const cat = CATEGORIES[product.category];
   const images = getImages(product.imageFolder);
   const heroImage = images[0];
+  const url = `${SITE.url}/${product.category}/${product.slug}`;
 
   return (
     <>
+      <JsonLd
+        data={[
+          serviceSchema({
+            name: product.title,
+            description: product.shortBlurb,
+            url,
+          }),
+          breadcrumbSchema([
+            { name: "Home", url: SITE.url },
+            { name: cat.title, url: `${SITE.url}/${product.category}` },
+            { name: product.title, url },
+          ]),
+        ]}
+      />
+
       <section className="relative bg-navy-900 text-white overflow-hidden">
         {heroImage && (
           <>

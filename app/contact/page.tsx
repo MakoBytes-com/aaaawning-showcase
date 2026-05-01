@@ -1,14 +1,21 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/Container";
 import { ContactForm } from "@/components/ContactForm";
+import { JsonLd } from "@/components/JsonLd";
 import { OFFICES, HOURS, SITE } from "@/lib/site";
+import { dallasOfficeLocalBusinessSchema, breadcrumbSchema } from "@/lib/schema";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
+
+const OG_TITLE = "Get a Free Awning Estimate | AAA Awning Co.";
+const OG_DESCRIPTION =
+  "Request a free on-site measurement and custom awning quote. Houston, Dallas, Fort Worth, Austin, San Antonio, and the Texas Gulf Coast.";
 
 export const metadata: Metadata = {
   title: "Get a Free Estimate",
-  description:
-    "Request a free on-site measurement and custom awning quote. Houston, Dallas, Fort Worth, Austin, San Antonio, and the Texas Gulf Coast.",
+  description: OG_DESCRIPTION,
   alternates: { canonical: "/contact" },
+  openGraph: { title: OG_TITLE, description: OG_DESCRIPTION, url: "/contact" },
+  twitter: { title: OG_TITLE, description: OG_DESCRIPTION },
 };
 
 // Google Maps embed URLs — using the keyless /maps/embed endpoint so we
@@ -25,6 +32,15 @@ export default function ContactPage() {
 
   return (
     <>
+      <JsonLd
+        data={[
+          dallasOfficeLocalBusinessSchema(),
+          breadcrumbSchema([
+            { name: "Home", url: SITE.url },
+            { name: "Contact", url: `${SITE.url}/contact` },
+          ]),
+        ]}
+      />
       <section className="bg-burgundy-600 text-white">
         <Container className="py-16 sm:py-20">
           <div className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-white/80">

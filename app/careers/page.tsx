@@ -4,11 +4,16 @@ import { CTAStrip } from "@/components/CTAStrip";
 import { Hammer, Users, HeartHandshake, Wrench } from "lucide-react";
 import { SITE, OFFICES } from "@/lib/site";
 
+const OG_TITLE = "Careers at AAA Awning — Fabricators, Installers, Sewers";
+const OG_DESCRIPTION =
+  "Now hiring fabricators, installers, welders, sewers, and sales professionals at AAA Awning Co. in Houston, TX.";
+
 export const metadata: Metadata = {
   title: "Careers & Employment Opportunities",
-  description:
-    "Now hiring fabricators, installers, welders, sewers, and sales professionals at AAA Awning Co. in Houston, TX.",
+  description: OG_DESCRIPTION,
   alternates: { canonical: "/careers" },
+  openGraph: { title: OG_TITLE, description: OG_DESCRIPTION, url: "/careers" },
+  twitter: { title: OG_TITLE, description: OG_DESCRIPTION },
 };
 
 const ROLES = [

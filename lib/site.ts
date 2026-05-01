@@ -4,7 +4,6 @@ export const SITE = {
   tagline: "Over 40 Years of metal and canvas awning products and services",
   url: "https://aaaawning.net",
   email: "admin@aaaawning.net",
-  legacyEmail: "main@aaaawning.net",
   copyrightStartYear: 1984,
 };
 
@@ -39,7 +38,6 @@ export const HOURS = "Monday – Friday, 8:00 AM – 4:00 PM";
 
 export const SOCIAL = {
   facebook: "https://www.facebook.com/AAA-Awning-158120620885158",
-  instagram: "https://www.instagram.com/",
   pinterest: "https://ar.pinterest.com/pin/84020349268584445/",
 };
 

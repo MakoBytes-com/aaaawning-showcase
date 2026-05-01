@@ -3,11 +3,16 @@ import { Container } from "@/components/Container";
 import { CTAStrip } from "@/components/CTAStrip";
 import { AlertTriangle, Wind, Wrench, ShieldCheck } from "lucide-react";
 
+const OG_TITLE = "Hurricane-Rated Awnings — Texas Gulf Coast | AAA Awning";
+const OG_DESCRIPTION =
+  "Hurricane-rated, wind-engineered awning systems for Houston, Galveston, Corpus Christi, League City, and the Texas Gulf Coast. Pre-storm prep and post-storm repair.";
+
 export const metadata: Metadata = {
   title: "Hurricane Season & Gulf Coast Awnings",
-  description:
-    "Hurricane-rated, wind-engineered awning systems for Houston, Galveston, Corpus Christi, League City, and the Texas Gulf Coast. Pre-storm prep and post-storm repair.",
+  description: OG_DESCRIPTION,
   alternates: { canonical: "/hurricane-season" },
+  openGraph: { title: OG_TITLE, description: OG_DESCRIPTION, url: "/hurricane-season" },
+  twitter: { title: OG_TITLE, description: OG_DESCRIPTION },
 };
 
 const PREP_CHECKLIST = [

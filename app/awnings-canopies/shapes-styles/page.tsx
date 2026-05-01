@@ -3,11 +3,20 @@ import Link from "next/link";
 import { Container } from "@/components/Container";
 import { CTAStrip } from "@/components/CTAStrip";
 
+const OG_TITLE = "Awning Shapes & Styles | AAA Awning";
+const OG_DESCRIPTION =
+  "Awning shape vocabulary — shed, dome, waterfall, quarter-barrel, concave, convex, gable, mansard. Side-profile illustrations of every standard awning shape we build.";
+
 export const metadata: Metadata = {
   title: "Awning Shapes & Styles",
-  description:
-    "Awning shape vocabulary — shed, dome, waterfall, quarter-barrel, concave, convex, gable, mansard. Side-profile illustrations of every standard awning shape we build.",
+  description: OG_DESCRIPTION,
   alternates: { canonical: "/awnings-canopies/shapes-styles" },
+  openGraph: {
+    title: OG_TITLE,
+    description: OG_DESCRIPTION,
+    url: "/awnings-canopies/shapes-styles",
+  },
+  twitter: { title: OG_TITLE, description: OG_DESCRIPTION },
 };
 
 type Shape = {

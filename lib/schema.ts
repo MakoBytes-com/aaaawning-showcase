@@ -2,7 +2,18 @@
 // Each function returns a plain object ready to be embedded in a
 // <script type="application/ld+json"> tag.
 
-import { SITE, OFFICES, HOURS, SOCIAL } from "./site";
+import { SITE, OFFICES, SOCIAL } from "./site";
+
+/**
+ * Verified social/profile URLs for `sameAs` in Organization + LocalBusiness
+ * schema. These are E-E-A-T signals to Google and AI crawlers — only include
+ * profiles that are confirmed to belong to this business; never include
+ * generic social-network homepages, since that signals to Google that the
+ * business has no real presence and erodes trust.
+ */
+const SAMEAS_PROFILES = [SOCIAL.facebook, SOCIAL.pinterest].filter(
+  (u): u is string => Boolean(u),
+);
 
 const SERVICE_AREA_CITIES = [
   "Houston",
@@ -49,12 +60,15 @@ export function organizationSchema() {
       postalCode: OFFICES.houston.zip,
       addressCountry: "US",
     },
-    sameAs: [SOCIAL.facebook, SOCIAL.instagram, SOCIAL.pinterest],
+    sameAs: SAMEAS_PROFILES,
   };
 }
 
 /** LocalBusiness schema for the main Houston HQ */
-export function localBusinessSchema() {
+export function localBusinessSchema(opts?: {
+  aggregateRating?: { ratingValue: number; reviewCount: number } | null;
+}) {
+  const rating = opts?.aggregateRating;
   return {
     "@context": "https://schema.org",
     "@type": "HomeAndConstructionBusiness",
@@ -65,6 +79,7 @@ export function localBusinessSchema() {
     telephone: OFFICES.houston.phone,
     email: SITE.email,
     priceRange: "$$",
+    foundingDate: "1984",
     address: {
       "@type": "PostalAddress",
       streetAddress: OFFICES.houston.street,
@@ -98,7 +113,66 @@ export function localBusinessSchema() {
         itemOffered: { "@type": "Service", name: s },
       })),
     },
-    sameAs: [SOCIAL.facebook, SOCIAL.instagram, SOCIAL.pinterest],
+    ...(rating && {
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: rating.ratingValue,
+        reviewCount: rating.reviewCount,
+        bestRating: 5,
+        worstRating: 1,
+      },
+    }),
+    sameAs: SAMEAS_PROFILES,
+  };
+}
+
+/** LocalBusiness schema for the Dallas/Richardson satellite office */
+export function dallasOfficeLocalBusinessSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "@id": `${SITE.url}/contact#dallas-office`,
+    name: `${SITE.name} — Dallas / Richardson Office`,
+    parentOrganization: { "@id": `${SITE.url}/#organization` },
+    image: `${SITE.url}/images/logo/aaa-awning-co-inc.png`,
+    url: `${SITE.url}/contact`,
+    telephone: OFFICES.dallas.phone,
+    email: SITE.email,
+    priceRange: "$$",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: OFFICES.dallas.street,
+      addressLocality: OFFICES.dallas.city,
+      addressRegion: OFFICES.dallas.state,
+      postalCode: OFFICES.dallas.zip,
+      addressCountry: "US",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 32.9748,
+      longitude: -96.7259,
+    },
+    description:
+      "Dallas-area satellite office (by appointment only) coordinating North Texas awning installations from our Houston fabrication shop.",
+    areaServed: [
+      "Dallas",
+      "Plano",
+      "Frisco",
+      "McKinney",
+      "Richardson",
+      "Highland Park",
+      "University Park",
+      "Allen",
+      "Rockwall",
+      "Fort Worth",
+      "Arlington",
+      "Southlake",
+      "Keller",
+      "Colleyville",
+      "Grapevine",
+      "Westlake",
+      "Mansfield",
+    ].map((c) => ({ "@type": "City", name: c })),
   };
 }
 

@@ -4,11 +4,16 @@ import { Container } from "@/components/Container";
 import { LOCATIONS, METRO_LABEL, type Metro } from "@/lib/locations";
 import { ChevronRight } from "lucide-react";
 
+const OG_TITLE = "Cities We Serve — Texas Awning Installations | AAA Awning";
+const OG_DESCRIPTION =
+  "Custom awnings, canopies, and shade structures across Houston, Dallas, Fort Worth, Austin, San Antonio, and the Texas Gulf Coast.";
+
 export const metadata: Metadata = {
   title: "Cities We Serve",
-  description:
-    "Custom awnings, canopies, and shade structures across Houston, Dallas, Fort Worth, Austin, San Antonio, and the Texas Gulf Coast.",
+  description: OG_DESCRIPTION,
   alternates: { canonical: "/locations" },
+  openGraph: { title: OG_TITLE, description: OG_DESCRIPTION, url: "/locations" },
+  twitter: { title: OG_TITLE, description: OG_DESCRIPTION },
 };
 
 const METRO_ORDER: Metro[] = ["houston", "dallas", "fort-worth", "austin", "san-antonio"];

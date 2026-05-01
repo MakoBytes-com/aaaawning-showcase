@@ -4,8 +4,20 @@ import { SITE, OFFICES } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Accessibility Statement",
-  description: "AAA Awning Co., Inc.'s commitment to making our website accessible to all users.",
+  description:
+    "AAA Awning Co., Inc.'s commitment to making our website accessible to all users.",
   alternates: { canonical: "/accessibility" },
+  openGraph: {
+    title: "Accessibility Statement | AAA Awning Co., Inc.",
+    description:
+      "AAA Awning Co., Inc.'s commitment to making our website accessible to all users.",
+    url: "/accessibility",
+  },
+  twitter: {
+    title: "Accessibility Statement | AAA Awning Co., Inc.",
+    description:
+      "AAA Awning Co., Inc.'s commitment to making our website accessible to all users.",
+  },
 };
 
 export default function AccessibilityPage() {

@@ -9,11 +9,20 @@ import {
 } from "@/lib/color-chart";
 import { ExternalLink } from "lucide-react";
 
+const OG_TITLE = "Sunbrella & Metal Color Charts | AAA Awning";
+const OG_DESCRIPTION =
+  "Sunbrella awning/marine solids, stripes, and Kynar metal finishes. Visual color chart from AAA Awning Co. — a Sunbrella Preferred Partner.";
+
 export const metadata: Metadata = {
   title: "Fabric & Metal Color Charts",
-  description:
-    "Sunbrella awning/marine solids, stripes, and Kynar metal finishes. Visual color chart from AAA Awning Co. — a Sunbrella Preferred Partner.",
+  description: OG_DESCRIPTION,
   alternates: { canonical: "/awnings-canopies/color-charts" },
+  openGraph: {
+    title: OG_TITLE,
+    description: OG_DESCRIPTION,
+    url: "/awnings-canopies/color-charts",
+  },
+  twitter: { title: OG_TITLE, description: OG_DESCRIPTION },
 };
 
 export default function ColorChartsPage() {

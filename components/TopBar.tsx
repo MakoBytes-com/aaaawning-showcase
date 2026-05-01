@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FacebookIcon, InstagramIcon } from "./icons/Social";
+import { FacebookIcon } from "./icons/Social";
 import { Container } from "./Container";
 import { SOCIAL } from "@/lib/site";
 
@@ -26,15 +26,6 @@ export function TopBar() {
             className="hover:opacity-80"
           >
             <FacebookIcon className="h-4 w-4" />
-          </Link>
-          <Link
-            href={SOCIAL.instagram}
-            aria-label="Instagram"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:opacity-80"
-          >
-            <InstagramIcon className="h-4 w-4" />
           </Link>
         </div>
       </Container>

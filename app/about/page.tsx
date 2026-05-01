@@ -4,11 +4,16 @@ import { CTAStrip } from "@/components/CTAStrip";
 import { PartnersStrip } from "@/components/PartnersStrip";
 import { Award, Users, Wrench, HeartHandshake } from "lucide-react";
 
+const OG_TITLE = "About AAA Awning — 40 Years of Texas Awning Fabrication";
+const OG_DESCRIPTION =
+  "AAA Awning Co., Inc. has been designing, fabricating, and installing custom awnings out of Houston for over 40 years. Family-run. Texas-built.";
+
 export const metadata: Metadata = {
   title: "About Us",
-  description:
-    "AAA Awning Co., Inc. has been designing, fabricating, and installing custom awnings out of Houston for over 40 years. Family-run. Texas-built.",
+  description: OG_DESCRIPTION,
   alternates: { canonical: "/about" },
+  openGraph: { title: OG_TITLE, description: OG_DESCRIPTION, url: "/about" },
+  twitter: { title: OG_TITLE, description: OG_DESCRIPTION },
 };
 
 const VALUES = [

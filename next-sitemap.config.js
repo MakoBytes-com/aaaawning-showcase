@@ -44,8 +44,32 @@ module.exports = {
   ],
   robotsTxtOptions: {
     policies: [
-      { userAgent: "*", allow: "/" },
-      { userAgent: "*", disallow: ["/api/", "/admin/"] },
+      // Default policy for all crawlers — allow public pages, block
+      // API + admin
+      { userAgent: "*", allow: "/", disallow: ["/api/", "/admin/"] },
+      // Explicitly welcome major AI / answer-engine crawlers. They
+      // already match the * rule, but listing them by name signals
+      // intent and helps some bots read more of the site.
+      { userAgent: "GPTBot", allow: "/", disallow: ["/api/", "/admin/"] },
+      { userAgent: "OAI-SearchBot", allow: "/", disallow: ["/api/", "/admin/"] },
+      { userAgent: "ChatGPT-User", allow: "/", disallow: ["/api/", "/admin/"] },
+      { userAgent: "ClaudeBot", allow: "/", disallow: ["/api/", "/admin/"] },
+      { userAgent: "Claude-Web", allow: "/", disallow: ["/api/", "/admin/"] },
+      { userAgent: "Claude-SearchBot", allow: "/", disallow: ["/api/", "/admin/"] },
+      { userAgent: "anthropic-ai", allow: "/", disallow: ["/api/", "/admin/"] },
+      { userAgent: "PerplexityBot", allow: "/", disallow: ["/api/", "/admin/"] },
+      { userAgent: "Perplexity-User", allow: "/", disallow: ["/api/", "/admin/"] },
+      { userAgent: "Google-Extended", allow: "/", disallow: ["/api/", "/admin/"] },
+      { userAgent: "GoogleOther", allow: "/", disallow: ["/api/", "/admin/"] },
+      { userAgent: "Applebot", allow: "/", disallow: ["/api/", "/admin/"] },
+      { userAgent: "Applebot-Extended", allow: "/", disallow: ["/api/", "/admin/"] },
+      { userAgent: "Bingbot", allow: "/", disallow: ["/api/", "/admin/"] },
+      { userAgent: "DuckDuckBot", allow: "/", disallow: ["/api/", "/admin/"] },
+      { userAgent: "CCBot", allow: "/", disallow: ["/api/", "/admin/"] },
+      { userAgent: "Bytespider", allow: "/", disallow: ["/api/", "/admin/"] },
+      { userAgent: "MistralAI-User", allow: "/", disallow: ["/api/", "/admin/"] },
+      { userAgent: "YouBot", allow: "/", disallow: ["/api/", "/admin/"] },
+      { userAgent: "DiffBot", allow: "/", disallow: ["/api/", "/admin/"] },
     ],
   },
 };

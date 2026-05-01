@@ -17,10 +17,13 @@ export async function generateMetadata({
   const { slug } = await params;
   const p = getProductBySlug(slug);
   if (!p || p.category !== "shade-curtains") return { title: "Not Found" };
+  const url = `/shade-curtains/${p.slug}`;
   return {
     title: p.title,
     description: p.shortBlurb,
-    alternates: { canonical: `/shade-curtains/${p.slug}` },
+    alternates: { canonical: url },
+    openGraph: { title: p.title, description: p.shortBlurb, url },
+    twitter: { title: p.title, description: p.shortBlurb },
   };
 }
 

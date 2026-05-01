@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FacebookIcon, InstagramIcon } from "./icons/Social";
+import { FacebookIcon } from "./icons/Social";
 import { Container } from "./Container";
 import { Logo } from "./Logo";
 import { OFFICES, HOURS, SITE, SOCIAL } from "@/lib/site";
@@ -104,9 +104,6 @@ export function Footer() {
           <div className="flex gap-3">
             <a href={SOCIAL.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-ink hover:text-burgundy-600">
               <FacebookIcon className="h-5 w-5" />
-            </a>
-            <a href={SOCIAL.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-ink hover:text-burgundy-600">
-              <InstagramIcon className="h-5 w-5" />
             </a>
           </div>
         </div>

@@ -6,10 +6,9 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { TopBar } from "@/components/TopBar";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { JsonLd } from "@/components/JsonLd";
+import { GlobalSchemas } from "@/components/GlobalSchemas";
 import { UmamiAnalytics } from "@/components/UmamiAnalytics";
 import { SITE } from "@/lib/site";
-import { organizationSchema, localBusinessSchema } from "@/lib/schema";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -37,7 +36,7 @@ export const metadata: Metadata = {
     template: `%s | ${SITE.name}`,
   },
   description:
-    "Custom fabric and metal awnings, canopies, shade structures, gazebos and carports for commercial and residential projects across Houston, Dallas, Fort Worth, Austin, San Antonio and the Texas Gulf Coast. 40+ years, Sunbrella partner.",
+    "Custom fabric and metal awnings, canopies, and shade structures for Texas homes and businesses. Houston-based since 1984. Free estimates.",
   applicationName: SITE.name,
   authors: [{ name: SITE.name, url: SITE.url }],
   generator: "Next.js",
@@ -67,17 +66,10 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: SITE.url,
     siteName: SITE.name,
-    title: `${SITE.name} — Custom Awnings, Canopies & Shade Structures in Texas`,
-    description:
-      "Custom fabric and metal awnings, canopies, shade structures, gazebos and carports for commercial and residential projects across Texas. 40+ years, Sunbrella partner.",
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE.name} — Custom Awnings & Canopies in Texas`,
-    description:
-      "40+ years of custom metal and canvas awning fabrication. Houston, Dallas, Fort Worth, Austin, San Antonio, Texas Gulf Coast.",
   },
   robots: {
     index: true,
@@ -112,7 +104,7 @@ export default function RootLayout({
       className={`${inter.variable} ${playfair.variable} ${pinyon.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-white text-ink">
-        <JsonLd data={[organizationSchema(), localBusinessSchema()]} />
+        <GlobalSchemas />
         <TopBar />
         <Header />
         <main className="flex-1 flex flex-col">{children}</main>

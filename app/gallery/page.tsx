@@ -7,11 +7,16 @@ import { IMAGES } from "@/lib/images-manifest";
 import { PRODUCTS } from "@/lib/products";
 import { ArrowRight } from "lucide-react";
 
+const OG_TITLE = "Project Gallery — Texas Awning Installations | AAA Awning";
+const OG_DESCRIPTION =
+  "A cross-section of AAA Awning installations across Texas — fabric awnings, metal awnings, carports, gazebos, shade structures, patio curtains, and more.";
+
 export const metadata: Metadata = {
   title: "Project Gallery",
-  description:
-    "A cross-section of AAA Awning installations across Texas — fabric awnings, metal awnings, carports, gazebos, shade structures, patio curtains, and more.",
+  description: OG_DESCRIPTION,
   alternates: { canonical: "/gallery" },
+  openGraph: { title: OG_TITLE, description: OG_DESCRIPTION, url: "/gallery" },
+  twitter: { title: OG_TITLE, description: OG_DESCRIPTION },
 };
 
 // Category folder -> display name + linked product category/slug

@@ -6,6 +6,15 @@ export const metadata: Metadata = {
   title: "Terms of Service",
   description: "Terms governing use of the AAA Awning Co., Inc. website.",
   alternates: { canonical: "/terms" },
+  openGraph: {
+    title: "Terms of Service | AAA Awning Co., Inc.",
+    description: "Terms governing use of the AAA Awning Co., Inc. website.",
+    url: "/terms",
+  },
+  twitter: {
+    title: "Terms of Service | AAA Awning Co., Inc.",
+    description: "Terms governing use of the AAA Awning Co., Inc. website.",
+  },
 };
 
 export default function TermsPage() {

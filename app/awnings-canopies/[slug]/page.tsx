@@ -17,10 +17,13 @@ export async function generateMetadata({
   const { slug } = await params;
   const p = getProductBySlug(slug);
   if (!p || p.category !== "awnings-canopies") return { title: "Not Found" };
+  const url = `/awnings-canopies/${p.slug}`;
   return {
     title: p.title,
     description: p.shortBlurb,
-    alternates: { canonical: `/awnings-canopies/${p.slug}` },
+    alternates: { canonical: url },
+    openGraph: { title: p.title, description: p.shortBlurb, url },
+    twitter: { title: p.title, description: p.shortBlurb },
   };
 }
 
