@@ -8,6 +8,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { GlobalSchemas } from "@/components/GlobalSchemas";
 import { UmamiAnalytics } from "@/components/UmamiAnalytics";
+import { DemoPill } from "@/components/DemoPill";
 import { SITE } from "@/lib/site";
 
 const inter = Inter({
@@ -72,15 +73,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
   },
   robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-      "max-video-preview": -1,
-    },
+    index: false,
+    follow: false,
+    nocache: true,
+    googleBot: { index: false, follow: false },
   },
   formatDetection: {
     telephone: true,
@@ -104,6 +100,7 @@ export default function RootLayout({
       className={`${inter.variable} ${playfair.variable} ${pinyon.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-white text-ink">
+        <DemoPill realUrl="https://www.aaaawning.net" />
         <GlobalSchemas />
         <TopBar />
         <Header />
