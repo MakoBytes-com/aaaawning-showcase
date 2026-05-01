@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@/components/Container";
 import { ChevronRight, Phone } from "lucide-react";
@@ -8,6 +9,10 @@ import { StorySnapshot } from "@/components/StorySnapshot";
 import { ProcessSteps } from "@/components/ProcessSteps";
 import { PartnersStrip } from "@/components/PartnersStrip";
 import { CTAStrip } from "@/components/CTAStrip";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export default function Home() {
   return (

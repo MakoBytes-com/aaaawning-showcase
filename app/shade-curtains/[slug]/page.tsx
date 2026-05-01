@@ -17,7 +17,11 @@ export async function generateMetadata({
   const { slug } = await params;
   const p = getProductBySlug(slug);
   if (!p || p.category !== "shade-curtains") return { title: "Not Found" };
-  return { title: p.title, description: p.shortBlurb };
+  return {
+    title: p.title,
+    description: p.shortBlurb,
+    alternates: { canonical: `/shade-curtains/${p.slug}` },
+  };
 }
 
 export default async function Page({

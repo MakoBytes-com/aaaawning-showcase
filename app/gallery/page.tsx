@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "Project Gallery",
   description:
     "A cross-section of AAA Awning installations across Texas — fabric awnings, metal awnings, carports, gazebos, shade structures, patio curtains, and more.",
+  alternates: { canonical: "/gallery" },
 };
 
 // Category folder -> display name + linked product category/slug

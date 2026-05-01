@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Shade & Curtains",
   description:
     "Shade structures, shade sails, patio curtains, and motorized screens for outdoor comfort across Texas.",
+  alternates: { canonical: "/shade-curtains" },
 };
 
 export default function Page() {

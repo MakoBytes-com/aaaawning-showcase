@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Awning Shapes & Styles",
   description:
     "Awning shape vocabulary — shed, dome, waterfall, quarter-barrel, concave, convex, gable, mansard. Side-profile illustrations of every standard awning shape we build.",
+  alternates: { canonical: "/awnings-canopies/shapes-styles" },
 };
 
 type Shape = {

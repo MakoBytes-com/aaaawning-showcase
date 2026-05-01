@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Get a Free Estimate",
   description:
     "Request a free on-site measurement and custom awning quote. Houston, Dallas, Fort Worth, Austin, San Antonio, and the Texas Gulf Coast.",
+  alternates: { canonical: "/contact" },
 };
 
 // Google Maps embed URLs — using the keyless /maps/embed endpoint so we

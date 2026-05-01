@@ -5,6 +5,7 @@ import { SITE, OFFICES } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Accessibility Statement",
   description: "AAA Awning Co., Inc.'s commitment to making our website accessible to all users.",
+  alternates: { canonical: "/accessibility" },
 };
 
 export default function AccessibilityPage() {

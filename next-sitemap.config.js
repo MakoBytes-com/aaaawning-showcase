@@ -34,7 +34,14 @@ module.exports = {
       lastmod: new Date().toISOString(),
     };
   },
-  exclude: ["/admin", "/admin/*"],
+  exclude: [
+    "/admin",
+    "/admin/*",
+    // File-route metadata images aren't crawlable HTML pages
+    "/icon.svg",
+    "/apple-icon",
+    "/opengraph-image",
+  ],
   robotsTxtOptions: {
     policies: [
       { userAgent: "*", allow: "/" },

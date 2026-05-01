@@ -18,6 +18,7 @@ export async function generateMetadata({
   return {
     title: `${loc.name}, TX — Custom Awnings & Canopies`,
     description: loc.blurb,
+    alternates: { canonical: `/locations/${loc.slug}` },
   };
 }
 

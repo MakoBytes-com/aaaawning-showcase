@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Hurricane Season & Gulf Coast Awnings",
   description:
     "Hurricane-rated, wind-engineered awning systems for Houston, Galveston, Corpus Christi, League City, and the Texas Gulf Coast. Pre-storm prep and post-storm repair.",
+  alternates: { canonical: "/hurricane-season" },
 };
 
 const PREP_CHECKLIST = [

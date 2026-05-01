@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   title: "Fabric & Metal Color Charts",
   description:
     "Sunbrella awning/marine solids, stripes, and Kynar metal finishes. Visual color chart from AAA Awning Co. — a Sunbrella Preferred Partner.",
+  alternates: { canonical: "/awnings-canopies/color-charts" },
 };
 
 export default function ColorChartsPage() {

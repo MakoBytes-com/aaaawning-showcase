@@ -5,6 +5,7 @@ import { SITE } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Terms of Service",
   description: "Terms governing use of the AAA Awning Co., Inc. website.",
+  alternates: { canonical: "/terms" },
 };
 
 export default function TermsPage() {

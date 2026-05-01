@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Cities We Serve",
   description:
     "Custom awnings, canopies, and shade structures across Houston, Dallas, Fort Worth, Austin, San Antonio, and the Texas Gulf Coast.",
+  alternates: { canonical: "/locations" },
 };
 
 const METRO_ORDER: Metro[] = ["houston", "dallas", "fort-worth", "austin", "san-antonio"];

@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "About Us",
   description:
     "AAA Awning Co., Inc. has been designing, fabricating, and installing custom awnings out of Houston for over 40 years. Family-run. Texas-built.",
+  alternates: { canonical: "/about" },
 };
 
 const VALUES = [

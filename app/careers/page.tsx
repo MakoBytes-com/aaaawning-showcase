@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Careers & Employment Opportunities",
   description:
     "Now hiring fabricators, installers, welders, sewers, and sales professionals at AAA Awning Co. in Houston, TX.",
+  alternates: { canonical: "/careers" },
 };
 
 const ROLES = [

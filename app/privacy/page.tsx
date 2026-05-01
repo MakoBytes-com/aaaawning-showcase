@@ -5,6 +5,7 @@ import { SITE } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "How AAA Awning Co., Inc. collects, uses, and protects information you share with us.",
+  alternates: { canonical: "/privacy" },
 };
 
 export default function PrivacyPage() {

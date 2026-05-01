@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Frequently Asked Questions",
   description:
     "Answers to the most common questions about AAA Awning Co. — estimates, materials, timelines, warranty, hurricane ratings, service areas, and more.",
+  alternates: { canonical: "/faq" },
 };
 
 export default function FAQPage() {
