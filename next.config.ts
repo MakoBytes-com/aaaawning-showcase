@@ -78,6 +78,13 @@ const LEGACY_REDIRECTS: { source: string; destination: string }[] = [
   { source: "/products/fabric-awnings/", destination: "/awnings-canopies/fabric-awnings" },
   { source: "/products/metal-awnings", destination: "/awnings-canopies/metal-awnings" },
   { source: "/products/metal-awnings/", destination: "/awnings-canopies/metal-awnings" },
+  // Legacy Yoast/WordPress sitemap paths → current sitemap
+  { source: "/sitemap_index.xml", destination: "/sitemap.xml" },
+  { source: "/post-sitemap.xml", destination: "/sitemap.xml" },
+  { source: "/page-sitemap.xml", destination: "/sitemap.xml" },
+  { source: "/category-sitemap.xml", destination: "/sitemap.xml" },
+  { source: "/product-sitemap.xml", destination: "/sitemap.xml" },
+  { source: "/portfolio_page-sitemap.xml", destination: "/sitemap.xml" },
 ];
 
 const nextConfig: NextConfig = {
