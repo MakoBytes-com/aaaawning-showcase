@@ -2,7 +2,7 @@
 // Scrapes category-appropriate product images from the legacy WordPress site
 // and saves them per-category into public/images/<folder>/.
 //
-// Per Russell (2026-04-22): "If you pull the images from the old site pages
+// Per Mako Admin (2026-04-22): "If you pull the images from the old site pages
 // individually they are correct for that page." So page = source of truth
 // for category. Same image appearing on multiple pages gets copied into
 // each target folder.

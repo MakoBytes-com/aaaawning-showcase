@@ -17,7 +17,7 @@ out of the jargon zone — they're not SEO people.
 ## Email body
 
 **To:** [owner@aaaawning.net], [employee@aaaawning.net]
-**Cc:** russell.sailors@gmail.com (or your Mako Logics address)
+**Cc:** admin@aaaawning.net (or your Mako Logics address)
 
 ---
 
@@ -144,9 +144,9 @@ I'll follow up next week with first-week traffic numbers.
 Congratulations on the new site — it's a real upgrade.
 
 Best,
-Russell Sailors
+Mako Admin
 Mako Logics
-russell.sailors@gmail.com
+admin@aaaawning.net
 [your phone]
 
 ---
