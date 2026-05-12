@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@/components/Container";
+import { VERCEL_DASHBOARD_BASE } from "@/lib/vercel-team";
 import {
   BarChart3,
   Gauge,
@@ -31,13 +32,13 @@ const LINKS: Card[] = [
   {
     title: "Vercel Analytics",
     subtitle: "Page views · top pages · referrers",
-    href: "https://vercel.com/mako-studi/aaaawning-net/analytics",
+    href: `${VERCEL_DASHBOARD_BASE}/aaaawning-net/analytics`,
     icon: BarChart3,
   },
   {
     title: "Vercel Speed Insights",
     subtitle: "Core Web Vitals · real-user performance",
-    href: "https://vercel.com/mako-studi/aaaawning-net/speed-insights",
+    href: `${VERCEL_DASHBOARD_BASE}/aaaawning-net/speed-insights`,
     icon: Gauge,
   },
   {
@@ -61,7 +62,7 @@ const LINKS: Card[] = [
   {
     title: "Vercel Project",
     subtitle: "Deploys · env vars · domains",
-    href: "https://vercel.com/mako-studi/aaaawning-net",
+    href: `${VERCEL_DASHBOARD_BASE}/aaaawning-net`,
     icon: Globe,
   },
   {
