@@ -47,3 +47,10 @@ next-env.d.ts
 /public/robots.txt
 
 .vercel
+
+
+# MakoBot MCP config contains a local auth token -- do not commit
+.mcp.json
+.mcp.json.*
+.cursor/mcp.json
+.cursor/mcp.json.*
