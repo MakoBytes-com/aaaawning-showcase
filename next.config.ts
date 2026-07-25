@@ -2,11 +2,14 @@ import type { NextConfig } from "next";
 import path from "node:path";
 
 // Content Security Policy — this showcase loads Vercel Analytics/Speed
-// Insights, Umami (script + the /admin dashboard iframe embed), Cloudflare
-// Turnstile on the contact form, and Google Maps embeds on /contact. Most
-// of the Turnstile/Umami code paths are dormant on this Vercel project (no
+// Insights, Umami (page-view tracking script), Cloudflare Turnstile on the
+// contact form, and Google Maps embeds on /contact. Most of the
+// Turnstile/Umami code paths are dormant on this Vercel project (no
 // NEXT_PUBLIC_TURNSTILE_SITE_KEY / NEXT_PUBLIC_UMAMI_* env vars set) but the
 // CSP allows them so the demo doesn't break if those env vars are ever added.
+// (No /admin dashboard on this showcase fork — it was a pure visual demo
+// route removed along with the rest of the inherited admin surface, so the
+// Umami iframe-embed allowance that used to live in frame-src is gone too.)
 const csp = [
   "default-src 'self'",
   "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com https://cloud.umami.is https://challenges.cloudflare.com",
@@ -15,7 +18,7 @@ const csp = [
   "font-src 'self' data:",
   "connect-src 'self' https://va.vercel-scripts.com https://vitals.vercel-insights.com https://cloud.umami.is https://challenges.cloudflare.com",
   "media-src 'self'",
-  "frame-src 'self' https://challenges.cloudflare.com https://cloud.umami.is https://www.google.com",
+  "frame-src 'self' https://challenges.cloudflare.com https://www.google.com",
   "form-action 'self'",
   "object-src 'none'",
   "base-uri 'self'",
