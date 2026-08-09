@@ -23,5 +23,13 @@ updates:
     directory: /
     schedule:
       interval: monthly
+    open-pull-requests-limit: 5
+    groups:
+      minor-and-patch:
+        update-types:
+          - minor
+          - patch
     commit-message:
       prefix: ci
+    labels:
+      - dependencies
