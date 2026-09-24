@@ -4,7 +4,6 @@ import Image from "next/image";
 import { Container } from "@/components/Container";
 import { CTAStrip } from "@/components/CTAStrip";
 import { IMAGES } from "@/lib/images-manifest";
-import { PRODUCTS } from "@/lib/products";
 import { ArrowRight } from "lucide-react";
 
 const OG_TITLE = "Project Gallery — Texas Awning Installations | AAA Awning";

@@ -31,14 +31,6 @@ export const METRO_OFFICE: Record<Metro, keyof typeof OFFICES> = {
   "san-antonio": "austin",
 };
 
-const COMMON_HIGHLIGHTS = [
-  "Custom fabric and metal awning fabrication in our Houston shop",
-  "Sunbrella Preferred Partner — premium awning fabric options",
-  "Installed by AAA employees — no subcontracting",
-  "Free on-site measurement and quote",
-  "Residential and commercial — any size project",
-];
-
 export const LOCATIONS: Location[] = [
   // Houston + Gulf Coast
   {

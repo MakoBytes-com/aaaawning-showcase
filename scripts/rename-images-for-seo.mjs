@@ -5,7 +5,7 @@
 //
 // Run once to rename, then re-run build-image-manifest.mjs.
 
-import { readdir, rename, stat } from "node:fs/promises";
+import { rename, stat } from "node:fs/promises";
 import path from "node:path";
 
 const ROOT = path.resolve("public/images");
