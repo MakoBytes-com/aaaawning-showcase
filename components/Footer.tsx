@@ -2,6 +2,7 @@ import Link from "next/link";
 import { FacebookIcon } from "./icons/Social";
 import { Container } from "./Container";
 import { Logo } from "./Logo";
+import { FooterCopyright } from "./Copyright";
 import { OFFICES, HOURS, SITE, SOCIAL } from "@/lib/site";
 
 const FOOTER_LINKS_A = [
@@ -109,6 +110,12 @@ export function Footer() {
         </div>
       </Container>
 
+      <div className="border-t border-zinc-200 bg-zinc-200/60">
+        <Container className="py-4 text-xs leading-relaxed text-muted">
+          <FooterCopyright />
+        </Container>
+      </div>
+
       <div className="border-t border-zinc-200">
         <Container className="py-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted">
           <p>© {currentYear} {SITE.name}. All rights reserved.</p>
@@ -116,6 +123,7 @@ export function Footer() {
             <Link href="/privacy" className="hover:text-burgundy-600">Privacy</Link>
             <Link href="/terms" className="hover:text-burgundy-600">Terms</Link>
             <Link href="/accessibility" className="hover:text-burgundy-600">Accessibility</Link>
+            <Link href="/license" className="hover:text-burgundy-600">License</Link>
             <span aria-hidden="true" className="text-zinc-300">·</span>
             <span>
               Designed by{" "}

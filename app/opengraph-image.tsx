@@ -77,6 +77,38 @@ export default function RootOpenGraphImage() {
           <div>aaaawning.net</div>
           <div style={{ fontWeight: 600 }}>Sunbrella Preferred Partner</div>
         </div>
+
+        {/* Copyright watermark: one line along the bottom, a faint one top-right,
+            so cropping either edge still leaves a mark. */}
+        <div
+          style={{
+            position: "absolute",
+            left: 0,
+            right: 0,
+            bottom: 18,
+            display: "flex",
+            justifyContent: "center",
+            fontSize: 20,
+            fontFamily: "sans-serif",
+            color: "rgba(255,255,255,0.62)",
+            textShadow: "0 1px 3px rgba(0,0,0,0.45)",
+          }}
+        >
+          © 2026 Mako Logics LLC · Showcase demo · License required
+        </div>
+        <div
+          style={{
+            position: "absolute",
+            top: 22,
+            right: 32,
+            display: "flex",
+            fontSize: 16,
+            fontFamily: "sans-serif",
+            color: "rgba(255,255,255,0.32)",
+          }}
+        >
+          © Mako Logics LLC
+        </div>
       </div>
     ),
     { ...size },

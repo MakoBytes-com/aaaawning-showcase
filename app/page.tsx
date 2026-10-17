@@ -9,6 +9,7 @@ import { StorySnapshot } from "@/components/StorySnapshot";
 import { ProcessSteps } from "@/components/ProcessSteps";
 import { PartnersStrip } from "@/components/PartnersStrip";
 import { CTAStrip } from "@/components/CTAStrip";
+import { HeroCopyrightNotice } from "@/components/Copyright";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
@@ -29,7 +30,10 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <section className="relative h-[72vh] min-h-[560px] w-full overflow-hidden bg-navy-900 text-white">
+      {/* min-height (not a fixed height) so the copy can never overflow the hero on
+          small phones; py leaves the top and bottom strips clear for the copyright
+          notice and the watermark burned into the bottom of the film. */}
+      <section className="relative flex min-h-[max(560px,72vh)] w-full overflow-hidden bg-navy-900 text-white">
         <video
           className="absolute inset-0 h-full w-full object-cover"
           src="/images/hero/aaa-awning-texas-projects-hero.mp4"
@@ -43,7 +47,7 @@ export default function Home() {
           className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/10"
           aria-hidden="true"
         />
-        <Container className="relative z-10 h-full flex items-center">
+        <Container className="relative z-10 flex items-center py-11 sm:py-12">
           <div className="max-w-2xl">
             <span className="inline-block bg-burgundy-600 px-6 py-3 text-2xl sm:text-3xl font-serif font-bold tracking-wide">
               AAA Awning Co. Inc.
@@ -73,6 +77,7 @@ export default function Home() {
             </div>
           </div>
         </Container>
+        <HeroCopyrightNotice />
       </section>
 
       <TrustRow />

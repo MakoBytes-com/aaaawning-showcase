@@ -50,7 +50,8 @@ const SECURITY_HEADERS = [
   {
     // Disable browser features we don't use
     key: "Permissions-Policy",
-    value: "camera=(), microphone=(), geolocation=(), interest-cohort=()",
+    value:
+      "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()",
   },
   { key: "Content-Security-Policy", value: csp },
 ];
