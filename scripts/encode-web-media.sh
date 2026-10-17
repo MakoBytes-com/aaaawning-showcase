@@ -75,3 +75,4 @@ echo "[1/1] aaa-awning-texas-projects-hero.mp4"
     -metadata "description=$NOTICE" \
     "$OUT" )
 echo "Done. watermark=$WATERMARK"
+echo "Now bump the ?v= tag on HERO_VIDEO_SRC in lib/site.ts: /images/* is cached for a year."

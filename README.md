@@ -43,6 +43,6 @@ These are set in Vercel project settings for preview + production.
 
 This showcase is public, so Mako Logics LLC's work on it is marked as ours:
 
-- The hero film has a watermark burned in and copyright metadata in the mp4. Re-encode it from the master in `gen/masters/` with `bash scripts/encode-web-media.sh` (set `FFMPEG=` to the ffmpeg.exe path on Windows). `WATERMARK=0` produces a clean copy for a licensed buyer. Never edit the master.
+- The hero film has a watermark burned in and copyright metadata in the mp4. Re-encode it from the master in `gen/masters/` with `bash scripts/encode-web-media.sh` (set `FFMPEG=` to the ffmpeg.exe path on Windows). `WATERMARK=0` produces a clean copy for a licensed buyer. After any re-encode, bump the `?v=` tag on `HERO_VIDEO_SRC` in `lib/site.ts` (`/images/*` is cached for a year). Never edit the master.
 - `components/Copyright.tsx` holds the notice text, the hero notice and the footer block. `/license` explains what is protected and how to license it.
 - Only Mako's work is claimed. AAA Awning Co., Inc.'s name, logo and project photos belong to them, are never watermarked, and are credited as theirs.

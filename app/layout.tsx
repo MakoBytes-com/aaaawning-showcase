@@ -9,7 +9,7 @@ import { Footer } from "@/components/Footer";
 import { GlobalSchemas } from "@/components/GlobalSchemas";
 import { UmamiAnalytics } from "@/components/UmamiAnalytics";
 import { DemoPill } from "@/components/DemoPill";
-import { SITE } from "@/lib/site";
+import { HERO_VIDEO_SRC, SITE } from "@/lib/site";
 import { JsonLd } from "@/components/JsonLd";
 import {
   COPYRIGHT_LINE,
@@ -48,7 +48,7 @@ const copyrightSchema = {
       "@id": `${SHOWCASE_URL}/#hero-film`,
       name: "AAA Awning showcase hero film",
       description: "AI-generated hero footage made by Mako Logics LLC for this showcase.",
-      contentUrl: `${SHOWCASE_URL}/images/hero/aaa-awning-texas-projects-hero.mp4`,
+      contentUrl: `${SHOWCASE_URL}${HERO_VIDEO_SRC}`,
       uploadDate: "2026-04-22",
       creator: { "@id": copyrightHolder["@id"] },
       copyrightHolder: { "@id": copyrightHolder["@id"] },

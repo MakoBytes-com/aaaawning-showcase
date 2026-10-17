@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Container } from "@/components/Container";
 import { ChevronRight, Phone } from "lucide-react";
-import { OFFICES } from "@/lib/site";
+import { HERO_VIDEO_SRC, OFFICES } from "@/lib/site";
 import { TrustRow } from "@/components/TrustRow";
 import { ProductGrid } from "@/components/ProductGrid";
 import { StorySnapshot } from "@/components/StorySnapshot";
@@ -36,7 +36,7 @@ export default function Home() {
       <section className="relative flex min-h-[max(560px,72vh)] w-full overflow-hidden bg-navy-900 text-white">
         <video
           className="absolute inset-0 h-full w-full object-cover"
-          src="/images/hero/aaa-awning-texas-projects-hero.mp4"
+          src={HERO_VIDEO_SRC}
           autoPlay
           loop
           muted

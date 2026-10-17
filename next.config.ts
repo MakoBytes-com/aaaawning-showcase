@@ -133,6 +133,12 @@ const nextConfig: NextConfig = {
         source: "/:path*",
         headers: SECURITY_HEADERS,
       },
+      {
+        // Long-lived static media. The hero film's URL carries a ?v= tag
+        // (lib/site.ts HERO_VIDEO_SRC) — bump it whenever the file is re-encoded.
+        source: "/images/:path*",
+        headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }],
+      },
     ];
   },
   async redirects() {

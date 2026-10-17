@@ -7,6 +7,10 @@ export const SITE = {
   copyrightStartYear: 1984,
 };
 
+// /images/* is cached for a year, so bump ?v= whenever scripts/encode-web-media.sh
+// re-encodes the hero film, or repeat visitors keep the old file.
+export const HERO_VIDEO_SRC = "/images/hero/aaa-awning-texas-projects-hero.mp4?v=2026-10-17";
+
 export const OFFICES = {
   houston: {
     label: "Houston Main",
