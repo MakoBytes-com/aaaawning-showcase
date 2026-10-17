@@ -11,7 +11,8 @@ import { SITE } from "@/lib/site";
 const DESCRIPTION = `What ${COPYRIGHT_OWNER} owns in this showcase build, what belongs to ${SITE.name}, and how to license the work.`;
 
 export const metadata: Metadata = {
-  title: "License & Copyright",
+  // Absolute so the site-wide "| AAA Awning" suffix doesn't make this read as the client's claim.
+  title: { absolute: `License & Copyright | ${COPYRIGHT_OWNER}` },
   description: DESCRIPTION,
   alternates: { canonical: "/license" },
   openGraph: {
